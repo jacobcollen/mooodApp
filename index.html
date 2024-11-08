@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moodboard Application</title>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <div class="header__left">
+                <img src="./assets/moood-icon.svg" alt="Logo" class="header__logo" />
+            </div>
+            <div class="header__center">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" class="search-bar__input"
+                        placeholder="Search for inspiration..." />
+                </div>
+            </div>
+            <div class="header__right">
+                <button id="exportBtn" class="header__export-btn">
+                    <img src="./assets/export-icon.svg" alt="Export" />
+                </button>
+            </div>
+        </header>
+
+        <div id="searchOverlay" class="search-overlay hidden">
+            <div class="search-overlay__content">
+                <button id="closeSearchBtn" class="search-overlay__close-btn">
+                    <img src="./assets/xicon.svg" alt="Close search overlay" />
+                </button>
+                <div class="search-bar search-bar--overlay">
+                    <input type="text" id="searchOverlayInput" class="search-bar__input"
+                        placeholder="Search for inspiration..." />
+                </div>
+                <div id="searchResultsGrid" class="search-results-grid"></div>
+            </div>
+        </div>
+        <aside class="sidebar" id="sidebar">
+            <ul id="pageTabs" class="sidebar__tabs">
+                <li class="sidebar__tab sidebar__tab--active" data-page-name="Page 1">
+                </li>
+                <li class="sidebar__tab sidebar__tab--add" id="addTab">
+                    <img src="./assets/+icon.svg" alt="Add" />
+                </li>
+            </ul>
+        </aside>
+
+        <main>
+            <div id="moodboard" class="moodboard">
+                <div id="moodboard-content" class="moodboard-content"></div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./src/app.ts"></script>
+</body>
+
+</html>
